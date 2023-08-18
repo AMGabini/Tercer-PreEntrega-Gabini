@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <h1>{{ titulo|upper }}</h1>
+
+    <h4>Cantidad de clientes al dia de la fecha {% now "d / m / Y" %}: {{ Cliente|length }}</h4>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de Cliente</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for c in Cliente %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.telefono }}</td>
+                <td>{{ c.direccion }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock contenido %}

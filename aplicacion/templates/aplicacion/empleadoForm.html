@@ -1,0 +1,14 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block contenido %}
+   <h2>Agregar Empleado</h2>
+   <form action="" method="post">
+       {% csrf_token %}
+       <p>Nombre: <input type="text" name= "nombre" id="nombre"></p>
+       <p>Puesto: <input type="text" name= "puesto" id="puesto"></p>
+       <p>Salario: <input type="number" name= "salario" id="salario"></p>
+       <p>Fecha_contratacion: <input type="date" name= "fecha_contratacion" id="fecha_contratacion"></p>
+       <input type="submit" value="Agregar">
+   </form>
+{% endblock contenido %}

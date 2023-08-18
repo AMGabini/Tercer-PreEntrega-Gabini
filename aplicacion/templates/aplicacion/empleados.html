@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <h1>{{ titulo|upper }}</h1>
+
+    <h4>Cantidad de empleados: {{ Empleado|length }}</h4>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de Empleado</th>
+                <th>Puesto</th>
+                <th>Salario</th>
+                <th>Fecha de contratacion</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for e in Empleado %}
+            <tr>
+                <td>{{ e.id }}</td>
+                <td>{{ e.nombre }}</td>
+                <td>{{ e.puesto }}</td>
+                <td>{{ e.salario }}</td>
+                <td>{{ e.fecha_contratacion }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock contenido %}

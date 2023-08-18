@@ -1,0 +1,30 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block contenido %}
+     <h1>{{ titulo|upper }}</h1>
+     
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de Receta</th>
+                <th>Ingredientes</th>
+                <th>Instrucciones</th>
+                <th>Tiempo de preparacion</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for r in Receta %}
+            <tr>
+                <td>{{ r.id }}</td>
+                <td>{{ r.titulo }}</td>
+                <td>{{ r.ingredientes }}</td>
+                <td>{{ r.instrucciones }}</td>
+                <td>{{ r.tiempo_preparacion }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock contenido %}

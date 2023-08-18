@@ -1,0 +1,14 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block contenido %}
+   <h2>Agregar Cliente</h2>
+   <form action="" method="post">
+       {% csrf_token %}
+       <p>Nombre: <input type="text" name= "nombre" id="nombre"></p>
+       <p>Email: <input type="text" name= "email" id="email"></p>
+       <p>Telefono: <input type="number" name= "telefono" id="telefono"></p>
+       <p>Direccion: <input type="str" name= "direccion" id="direccion"></p>
+       <input type="submit" value="Agregar">
+   </form>
+{% endblock contenido %}
